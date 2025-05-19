@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import connectDB from './config/db.js';
 
 import categoryRoutes  from './routes/categoryRoutes.js';
+import foodRoutes  from './routes/foodRoutes.js';
 
 dotenv.config();
 const app = express();
@@ -15,6 +16,7 @@ app.use(express.json());
 // Routes
 
 app.use('/api', categoryRoutes);
+app.use('/api', foodRoutes);
 
 // DB & Server
 const PORT = process.env.PORT || 5000;
